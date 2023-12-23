@@ -1,0 +1,533 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@100;300;400;500;600&display=swap");
+* {
+  font-family: "Raleway", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  outline: none;
+  border: none;
+  text-transform: capitalize;
+  transition: all 0.2s linear;
+}
+
+/* Variables */
+:root {
+  --yellow: #eacf4f;
+  --white: #fff;
+  --black: #000;
+  --light-color: #aaa;
+  --border: 0.2rem solid rgba(255, 255, 255, 0.3);
+}
+
+/* Mixins */
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+  scroll-padding-top: 8rem;
+  overflow-x: hidden;
+}
+
+body {
+  background: url(../images/background.jpg);
+  background-attachment: fixed;
+  background-position: center;
+  overflow-x: hidden;
+}
+
+section {
+  padding: 3rem 9%;
+}
+
+.heading {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+.heading h3 {
+  font-size: 3rem;
+  text-transform: uppercase;
+  color: white;
+  margin-top: 1rem;
+  position: relative;
+  bottom: 50px;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 1rem;
+  cursor: pointer;
+  color: var(--white);
+  border: 1px solid gray;
+  background: no-repeat;
+  font-size: 1.7rem;
+  padding: 1rem 3rem;
+  position: relative;
+  bottom: 10px;
+}
+
+.btn:hover {
+  color: var(--black);
+  background: var(--white);
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background-color: black;
+  padding: 3rem 9%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.header .icons {
+  font-size: 2.5rem;
+  cursor: pointer;
+  color: var(--white);
+}
+
+.header .icons:hover {
+  color: var(--yellow);
+}
+
+.header #menu-btn {
+  display: none;
+}
+
+.header .navbar a {
+  color: var(--white);
+  font-size: 2rem;
+  margin: 0 2rem;
+}
+
+.header .navbar a:hover {
+  text-decoration: underline;
+  text-underline-offset: 1rem;
+  color: var(--yellow);
+}
+
+.space {
+  display: inline-block;
+  width: 16rem;
+}
+
+.logo {
+  position: absolute;
+  top: 1rem;
+  left: 48.5%;
+  transform: translatex(-50%);
+}
+.logo img {
+  width: 8rem;
+}
+
+.search-form {
+  height: 7rem;
+  padding: 0 2rem;
+  border-top: 1px ridge;
+  display: flex;
+  align-items: center;
+  background: var(--black);
+  position: absolute;
+  top: 99%;
+  left: 0;
+  right: 0;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+          clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+}
+.search-form.active {
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+          clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+
+#search-box {
+  width: 100%;
+  background: none;
+  text-transform: none;
+  font-size: 1.6rem;
+  color: var(--white);
+}
+
+.fa-times {
+  transform: rotate(180deg);
+}
+
+.home {
+  margin-top: 6rem;
+  background: url(../images/bac.png) no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.home .content {
+  max-width: 70rem;
+  text-align: center;
+  margin: 0 auto;
+}
+.home .content img {
+  width: 100%;
+}
+
+.content h3 {
+  color: white;
+  font-size: 30px;
+  text-transform: uppercase;
+  position: relative;
+  bottom: 70px;
+  word-spacing: 0.1em;
+
+}
+
+.content p {
+  font-size: 15px;
+  color: rgb(196, 201, 195);
+  position: relative;
+  bottom: 40px;
+  word-spacing: 0.1em;
+  line-height: 3rem;
+}
+
+.service {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(31rem, 1fr));
+  gap: 2rem;
+}
+.service .box {
+  text-align: center;
+  padding: 2rem;
+}
+.service .box i {
+  height: 7rem;
+  width: 7rem;
+  line-height: 7rem;
+  font-size: 2.5rem;
+  color: black;
+  background: yellow;
+  margin-bottom: 1rem;
+  border-radius: 50%;
+}
+.service .box h3 {
+  padding: 1rem 0;
+  font-size: 2rem;
+  text-transform: uppercase;
+  color: white;
+}
+.service .box p {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  color: rgb(196, 201, 195);
+  line-height: 2rem;
+}
+
+.menu .box-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(31rem, 1fr));
+  gap: 2rem;
+}
+.menu .box-container .box {
+  text-align: center;
+}
+.menu .box-container .box:hover {
+  transform: translatey(1rem);
+}
+.menu .box-container .box img {
+  height: 25rem;
+}
+.menu .box-container .box .content {
+  padding: 1rem 0;
+}
+.menu .box-container .box .content .stars {
+  margin-bottom: 1rem;
+}
+.menu .box-container .box .content .stars i {
+  font-size: 1.7rem;
+  color: yellow;
+}
+.menu .box-container .box .content h3 {
+  font-size: 2rem;
+  text-transform: uppercase;
+  color: white;
+  line-height: 5rem;
+}
+.menu .box-container .box .content .price {
+  font-size: 2rem;
+  line-height: 2rem;
+  color: rgb(196, 201, 195);
+  line-height: 1cm;
+  margin-top: -4rem;
+}
+
+.about {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 3rem;
+}
+.about .image {
+  flex: 1 1 40rem;
+}
+.about .image img {
+  width: 100%;
+}
+.about .content {
+  flex: 1 1 40rem;
+}
+.about .content .title {
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  color: white;
+  margin-bottom: -13rem;
+}
+.about .content p {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  color: rgb(196, 201, 195);
+  padding: 5rem 0;
+  line-height: 2.5rem;
+  margin-top: 7rem;
+}
+.about .content .icons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+.about .content .icons h3 {
+  flex: 1 1 16rem;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  color: white;
+}
+.about .content .icons h3 i {
+  padding-right: 0.5rem;
+  color: yellow;
+}
+
+.reviews .box-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(31rem, 1fr));
+  gap: 2rem;
+}
+.reviews .box-container .box {
+  text-align: center;
+  padding: 2rem;
+}
+.reviews .box-container .box img {
+  height: 10rem;
+  width: 10rem;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+}
+.reviews .box-container .box h3 {
+  font-size: 2rem;
+  text-transform: uppercase;
+  color: white;
+}
+.reviews .box-container .box p {
+  font-size: 1.4rem;
+  line-height: 2rem;
+  color: rgb(196, 201, 195);
+  padding: 1rem 0;
+}
+.reviews .box-container .box .stars {
+  padding-top: 0.5rem;
+}
+.reviews .box-container .box .stars i {
+  font-size: 1.7rem;
+  color: yellow;
+}
+
+.contact .row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3rem;
+}
+.contact .row .map {
+  flex: 1 1 40rem;
+}
+.contact .row .form {
+  flex: 1 1 40rem;
+}
+.contact .row .form .icons-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+.contact .row .form .icons-container .icons {
+  flex: 1 1 17rem;
+  text-align: center;
+}
+.contact .row .form .icons-container .icons i {
+  height: 6rem;
+  width: 6rem;
+  line-height: 6rem;
+  border-radius: 50%;
+  background: yellow;
+  color: black;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+.contact .row .form .icons-container .icons h3 {
+  padding: 1rem 0;
+  font-size: 2rem;
+  text-transform: uppercase;
+  color: white;
+}
+.contact .row .form .icons-container .icons p {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  color: rgb(196, 201, 195);
+}
+.contact .row .form form {
+  text-align: center;
+}
+.contact .row .form form .box {
+  padding: 1.2rem 1.4rem;
+  font-size: 1.6rem;
+  color: white;
+  background: none;
+  border: 1px solid gray;
+  text-transform: none;
+  width: 100%;
+  margin: 0.7rem 0;
+}
+.contact .row .form form .box:focus {
+  border-color: yellow;
+}
+.contact .row .form form textarea {
+  height: 15rem;
+  resize: none;
+}
+
+.blogs .box-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(31rem, 1fr));
+  gap: 2rem;
+}
+.blogs .box-container .box {
+  position: relative;
+}
+.blogs .box-container .box:hover .image img {
+  transform: scale(1.1);
+}
+.blogs .box-container .box:hover .image .icons {
+  transform: translatey(0);
+}
+.blogs .box-container .box .image {
+  height: 25rem;
+  overflow: hidden;
+  position: relative;
+}
+.blogs .box-container .box .image .icons {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem;
+  background: black;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  transform: translatey(10rem);
+}
+.blogs .box-container .box .image .icons a {
+  font-size: 1.5rem;
+  color: white;
+}
+.blogs .box-container .box .image .icons a i {
+  padding-right: 0.5rem;
+  color: yellow;
+}
+.blogs .box-container .box .image .icons a:hover {
+  color: yellow;
+}
+.blogs .box-container .box .image img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.blogs .box-container .box .content {
+  text-align: center;
+  padding: 2rem;
+}
+.blogs .box-container .box .content h3 {
+  font-size: 2rem;
+  text-transform: uppercase;
+  color: white;
+  margin-top: 6rem;
+}
+.blogs .box-container .box .content p {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  color: rgb(196, 201, 195);
+  padding: 1.5rem 0;
+  margin-bottom: -4rem;
+}
+
+.footer {
+  text-align: center;
+  background: linear-gradient(transaprent, black);
+}
+.footer .links a {
+  margin: 1rem;
+}
+
+@media (max-width: 1200px) {
+  .header {
+    padding: 3rem;
+  }
+  section {
+    padding: 3rem 2rem;
+  }
+}
+@media (max-width: 991px) {
+  html {
+    font-size: 55%;
+  }
+  .header {
+    justify-content: flex-end;
+    gap: 2rem;
+  }
+  .logo {
+    transform: translatex(0);
+    left: 3rem;
+  }
+  .header #menu-btn {
+    display: inline-block;
+  }
+  .header .navbar {
+    position: absolute;
+    top: 99%;
+    left: 0;
+    right: 0;
+    background: var(--black);
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+            clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+  }
+  .header .navbar.active {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+  .header .navbar a {
+    display: block;
+    margin: 3rem 2rem;
+  }
+  .header .navbar .space {
+    display: none;
+  }
+}
+@media (max-width: 768px) {
+  .home .content h3 {
+    font-size: 2rem;
+  }
+}
+@media (max-width: 450px) {
+  html {
+    font-size: 50%;
+  }
+}/*# sourceMappingURL=style.css.map */
