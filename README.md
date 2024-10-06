@@ -30,16 +30,6 @@ To run this project locally:
 
        cd Burger-website
 
+
 3. Open the index.html file in your web browser to view the website locally.
 
-Folder Structure :
-
-Burger-website/
-│
-├── index.html         # Main HTML file
-├── css/
-│   └── styles.css     # Custom CSS styles
-├── img/
-│   └── burger.png     # Images used in the project
-└── js/
-    └── script.js      # JavaScript file for interactivity (if any)
